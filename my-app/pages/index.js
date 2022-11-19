@@ -65,7 +65,8 @@ export default function Home() {
         provider
       );
       // call the numAddressesWhitelisted from the contract
-      const _numOfWhitelisted = await whitelistContract.numAddressWhitelisted();
+      const _numOfWhitelisted =
+        await whitelistContract.numAddressesWhitelisted();
       setNumOfWhitelisted(_numOfWhitelisted);
     } catch (err) {
       console.error(err);

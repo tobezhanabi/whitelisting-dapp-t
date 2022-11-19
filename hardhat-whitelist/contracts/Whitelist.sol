@@ -5,7 +5,7 @@ contract Whitelist {
   // max number of whitelist
   uint8 public maxWhitelistedAddress;
   // current whitelisted address, starting at 0
-  uint8 public numAddressWhitelisted;
+  uint8 public numAddressesWhitelisted;
 
   mapping(address => bool) public whitelistedAddresses;
 
@@ -19,10 +19,10 @@ contract Whitelist {
       "sender already exist in whitelist"
     );
     require(
-      numAddressWhitelisted < maxWhitelistedAddress,
+      numAddressesWhitelisted < maxWhitelistedAddress,
       "Miax whitelisted address reach!"
     );
     whitelistedAddresses[msg.sender] = true;
-    numAddressWhitelisted += 1;
+    numAddressesWhitelisted += 1;
   }
 }
